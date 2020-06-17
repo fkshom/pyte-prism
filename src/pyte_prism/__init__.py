@@ -126,7 +126,7 @@ class Iframe(object):
 
 class PageMetaclass(type):
   def __new__(cls, name, bases, dict_):
-    for k, v in dict_.items():
+    for k, v in list(dict_.items()):
       if isinstance(v, Element) or isinstance(v, Elements):
         smg = SupportMethodGenerator()
         dict_[f"wait_until_{k}_visible"] = smg.wait_until_element_visible(v.by, v.selector)
