@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyte-prism"
-version = "0.0.2"
+version = "0.0.3"
 description = "A Page Object Model DSL for Python, inspired by Ruby SitePrism"
 readme = "README.rst"
 authors = ["Shoma FUKUDA <fkshom+pypi@gmail.com>"]
