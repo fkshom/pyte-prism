@@ -12,5 +12,9 @@ fi
 ## Requirements
 ## poetry config http-basic.pypi username password
 ## poetry config http-basic.testpypi username password
-ENVIRONMENT=${1:-testpypi}
-poetry publish -v -r ${ENVIRONMENT} --build
+## poetry config repositories.testpypi.url "https://test.pypi.org/legacy/"
+REPOSITORY=""
+if [ -z "$1" ]; then
+  REPOSITORY="-r testpypi"
+fi
+poetry publish -v ${REPOSITORY} --build
