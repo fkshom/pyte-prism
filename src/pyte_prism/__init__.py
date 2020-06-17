@@ -54,6 +54,7 @@ class SupportMethodGenerator(object):
       wait.until(
         EC.visibility_of_element_located((by, selector))
       )
+      return self.driver.find_element(by, selector)
     return inner
 
   def wait_until_element_invisible(self, by, selector):
@@ -63,6 +64,7 @@ class SupportMethodGenerator(object):
       wait.until(
         EC.invisibility_of_element_located((by, selector))
       )
+      return None
     return inner
 
   def wait_until_element_to_be_clickable(self, by, selector):
@@ -72,6 +74,7 @@ class SupportMethodGenerator(object):
       wait.until(
         EC.element_to_be_clickable((by, selector))
       )
+      return self.driver.find_element(by, selector)
     return inner
 
   def has_element(self, by, selector):
