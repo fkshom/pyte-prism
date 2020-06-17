@@ -165,11 +165,11 @@ class PageMetaclass(type):
         dict_[f"has_no_{k}"] = smg.has_no_element(v.base_by, v.base_selector)
 
         if isinstance(v, Section):
-          dict_[f"{k}_element"] = smg.element_element(v.by, v.selector)
+          dict_[f"{k}_element"] = smg.element_element(v.base_by, v.base_selector)
         elif isinstance(v, Sections):
-          dict_[f"{k}_elements"] = smg.element_elements(v.by, v.selector)
+          dict_[f"{k}_elements"] = smg.element_elements(v.base_by, v.base_selector)
         elif isinstance(v, Iframe):
-          dict_[f"{k}_element"] = smg.element_element(v.by, v.selector)
+          dict_[f"{k}_element"] = smg.element_element(v.base_by, v.base_selector)
 
 
     return type.__new__(cls, name, bases, dict_)
