@@ -8,7 +8,7 @@ from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from uritemplate import expand as uriexpand
 from logging import getLogger
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 logger = getLogger(__name__)
 
 def logged(func):
